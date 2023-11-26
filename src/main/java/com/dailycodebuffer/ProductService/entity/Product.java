@@ -1,4 +1,4 @@
-package com.dailycodebuffer.ProductServoce.entity;
+package com.dailycodebuffer.ProductService.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

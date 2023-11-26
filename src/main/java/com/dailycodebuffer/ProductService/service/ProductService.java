@@ -1,4 +1,4 @@
-package com.dailycodebuffer.ProductServoce.service;
+package com.dailycodebuffer.ProductService.service;
 
 public interface ProductService {
 }

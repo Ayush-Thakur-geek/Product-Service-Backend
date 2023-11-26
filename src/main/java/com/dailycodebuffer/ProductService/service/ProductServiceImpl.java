@@ -1,4 +1,4 @@
-package com.dailycodebuffer.ProductServoce.service;
+package com.dailycodebuffer.ProductService.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.dailycodebuffer.ProductServoce.repository;
+package com.dailycodebuffer.ProductService.repository;
 
-import com.dailycodebuffer.ProductServoce.entity.Product;
+import com.dailycodebuffer.ProductService.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

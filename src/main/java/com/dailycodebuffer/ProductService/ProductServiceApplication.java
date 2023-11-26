@@ -1,4 +1,4 @@
-package com.dailycodebuffer.ProductServoce;
+package com.dailycodebuffer.ProductService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

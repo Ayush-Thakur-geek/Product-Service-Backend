@@ -1,4 +1,4 @@
-package com.dailycodebuffer.ProductServoce.controller;
+package com.dailycodebuffer.ProductService.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
