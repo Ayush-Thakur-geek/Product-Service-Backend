@@ -5,6 +5,7 @@ import com.dailycodebuffer.ProductService.exception.ProductServiceCustomExceptio
 import com.dailycodebuffer.ProductService.model.ProductRequest;
 import com.dailycodebuffer.ProductService.model.ProductResponse;
 import com.dailycodebuffer.ProductService.repository.ProductRepository;
+import lombok.Synchronized;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,19 @@ public class ProductServiceImpl implements ProductService{
         ProductResponse productResponse = new ProductResponse();
         copyProperties(product, productResponse);//or BeanUtils.copyProperties(product, productResponse)
         return productResponse;
+    }
+
+    @Override
+    public synchronized void reduceQuantity(long productId, long quantity) {
+        log.info("Reduce Quantity {} for Id: {}", quantity, productId);
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ProductServiceCustomException("Product with the given id not found", "PRODUCT NOT FOUND"));
+        if (product.getQuantity() < quantity) {
+            throw new ProductServiceCustomException("Product does not have sufficient Quantity",
+                    "INSUFFICIENT QUANTITY");
+        }
+        product.setQuantity(product.getQuantity() - quantity);
+        productRepository.save(product);
+        log.info("Product Quantity Updated Successfully");
     }
 }
